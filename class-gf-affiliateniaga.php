@@ -241,6 +241,9 @@ class GFAffiliateNiaga extends GFAddOn {
         // Trim the full name
         $full_name = trim( $full_name );
 
+	if (empty($full_name)) {
+        $full_name = rgar($entry, $name_location);}
+
         // Prepare the data to be sent in the request
         $data = array(
             'profile' => '1',
